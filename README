@@ -1,0 +1,14 @@
+In aceasta proiect am implementat simularea activitatii unui cluster in Python.
+Activitatea clusterului simulat consta in inmultirea a doua matrici
+de mari dimensiuni ce au elementele distribuite pe mai multe noduri.
+Fiecare nod va primi joburi de calcul a unui bloc din matricea
+finala, astfel acesta fiind nevoit sa obtina pentru calcularea
+elementelor, elemente de la celelalte noduri. 
+In functia 'compute_matrix', mai intai, se obtine blocul din
+prima matrice si din a doua matrice si se depun in doua matrici
+A si B. Aceasta se realizeaza astfel: se calculeaza nodul in care 
+se gaseste elementul solicitat, se creeaza un thread 'Helper' care
+va obtine elementul solicitat, dupa care se depune in matricea
+portrivita. In final se apeleaza functia 'multiply' care va realiza
+inmultirea celor doua matric, iar rezultatul este intors.
+
